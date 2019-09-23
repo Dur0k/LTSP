@@ -9,7 +9,7 @@ For the VM a dedicated Network interface controller (NIC) is needed. To improve 
 ## Installation
 ### VM setup
 Inline-style: 
-!(https://durok.tech/gitea/durok/LTSP/src/branch/master/src/common/images/VM1.png "Logo Title Text 1")
+![](https://durok.tech/gitea/durok/LTSP/src/branch/master/src/common/images/VM1.png)
 ## Push to git
 git add *
 
