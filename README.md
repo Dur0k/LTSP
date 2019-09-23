@@ -8,8 +8,12 @@ For the VM a dedicated Network interface controller (NIC) is needed. To improve 
 
 ## Installation
 ### VM setup
-Inline-style: 
+In the following the process of setting up the VM is described. 
+Choose the desired installation media. In this case an ISO is used.
 ![VM1](https://durok.tech/gitea/durok/LTSP/raw/branch/master/src/common/images/VM1.png)
+![VM1](https://durok.tech/gitea/durok/LTSP/raw/branch/master/src/common/images/VM2.png)
+
+
 ## Push to git
 git add *
 
