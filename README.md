@@ -50,6 +50,7 @@ sudo apt install ifupdown
 ```
 
 Configure the **/etc/network/interfaces** file with the desired configuration:
+
 `/etc/network/interfaces`
 ```bash
 # The loopback network interface
@@ -60,6 +61,55 @@ iface lo inet loopback
 allow-hotplug eth0
 auto eth0
 iface eth0 inet dhcp
+```
+
+To view all network interfaces use the `ip a` command.
+
+Enable ifupdown:
+```bash
+sudo ifdown --force eth0 lo && ifup -a
+sudo systemctl unmask networking
+sudo systemctl enable networking
+sudo systemctl restart networking
+```
+
+Disable and remove netplan services:
+```bash
+sudo systemctl stop systemd-networkd.socket systemd-networkd networkd-dispatcher systemd-networkd-wait-online
+sudo systemctl disable systemd-networkd.socket systemd-networkd networkd-dispatcher systemd-networkd-wait-online
+sudo systemctl mask systemd-networkd.socket systemd-networkd networkd-dispatcher systemd-networkd-wait-online
+sudo apt-get --assume-yes purge nplan netplan.io
+```
+
+Afterwards add a DNS server to 
+`/etc/systemd/resolved.conf`
+```bash
+[Resolve]
+DNS=1.1.1.1
+DNS=1.0.0.1
+```
+.
+This is needed by the DNS stub resolver as provided by SYSTEMD-RESOLVED.SERVICE(8).
+Now restart the systemd-resolved service
+```bash
+sudo systemctl restart systemd-resolved
+```
+
+### Install LTSP
+Add the Greek schools repository and update.
+```bash
+sudo add-apt-repository --yes ppa:ts.sch.gr
+sudo apt update
+```
+
+Install LTSP in chroot mode FIXME
+```bash
+sudo apt install --yes --install-recommends ltsp-server-standalone epoptes
+```
+
+Add your user to the epoptes group for later management
+```bash
+sudo gpasswd -a ${SUDO_USER:-$USER} epoptes
 ```
 
 ## Push to git
