@@ -50,6 +50,7 @@ sudo apt install ifupdown
 ```
 
 Configure the **/etc/network/interfaces** file with the desired configuration:
+
 `/etc/network/interfaces`
 ```bash
 # The loopback network interface
@@ -61,6 +62,17 @@ allow-hotplug eth0
 auto eth0
 iface eth0 inet dhcp
 ```
+
+To view all network interfaces use the `ip a` command.
+
+Enable ifupdown:
+```bash
+sudo ifdown --force eth0 lo && ifup -a
+sudo systemctl unmask networking
+sudo systemctl enable networking
+sudo systemctl restart networking
+```
+
 
 ## Push to git
 git add *
