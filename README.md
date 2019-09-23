@@ -12,16 +12,13 @@ In the following the process of setting up the VM is described.
 Choose the desired installation media. In this case a Ubuntu 18.04 server ISO is used.
 
 ![VM1](https://durok.tech/gitea/durok/LTSP/raw/branch/master/src/common/images/VM1.png)
-
 ![VM2](https://durok.tech/gitea/durok/LTSP/raw/branch/master/src/common/images/VM2.png)
 
 Afterwards create the disk image to be used for the VM.
 
 ![VM3](https://durok.tech/gitea/durok/LTSP/raw/branch/master/src/common/images/VM3.png)
-
-Now you review your settings and choose the *Customize configuration before install* option.
-
 ![VM4](https://durok.tech/gitea/durok/LTSP/raw/branch/master/src/common/images/VM4.png)
+Now you review your settings and choose the *Customize configuration before install* option.
 
 Choose the i440FX chipset and the OVMF UEFIx86_64 firmware.
 
