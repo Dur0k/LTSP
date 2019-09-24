@@ -309,6 +309,7 @@ sudo chmod -R 755 /opt/ltsp/amd64/etc/skel/*
 
 ## More links
 http://dashohoxha.fs.al/ltsp-scenarios/
+https://sourceforge.net/p/ltsp/mailman/search/?q=Guest+sessions
 ## Push to git
 git add *
 
